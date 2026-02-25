@@ -27,7 +27,7 @@ public class Usuario {
     public void mostrarUsuarios() {
         System.out.println("=== DETALHES DO USUÁRIO ===");
         System.out.println("Nome do usuário: " + nome + ".");
-        System.out.println("ID do usuário " + id + ".");
+        System.out.println("ID do usuário: " + id + ".");
         System.out.println("====================");
     }
 
