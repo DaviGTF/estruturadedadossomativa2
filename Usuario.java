@@ -5,7 +5,7 @@ public class Usuario {
     private int id;
     private HistoricoNavegacao historico;
 
-
+//teste
     public Usuario(String nome, int id) {
         this.nome = nome;
         this.id = id;
@@ -31,7 +31,6 @@ public class Usuario {
         System.out.println("Id do usuário " + id + ".");
         System.out.println("====================");
     }
-
 
     //exibir menu usuarios
     public class ExibirMenuUsuarios {
