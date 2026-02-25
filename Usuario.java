@@ -5,7 +5,6 @@ public class Usuario {
     private int id;
     private HistoricoNavegacao historico;
 
-//teste
     public Usuario(String nome, int id) {
         this.nome = nome;
         this.id = id;
@@ -33,7 +32,7 @@ public class Usuario {
     }
 
     //exibir menu usuarios
-    public class ExibirMenuUsuarios {
+    public static class ExibirMenuUsuarios {
         public static void exibir(FilaDeEsperaUsuario fila, Scanner scanner) {
             int opcao;
             do {
