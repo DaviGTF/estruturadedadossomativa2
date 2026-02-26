@@ -1,7 +1,7 @@
 import java.util.Queue;
 import java.util.LinkedList;
-import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Iterator;
 
 public class FilaDeEsperaUsuario {
     private Queue<Usuario> fila = new LinkedList<>();
@@ -11,6 +11,10 @@ public class FilaDeEsperaUsuario {
         System.out.println("O usuário " + usuario.getNome() + " foi adicionado à lista de espera com sucesso!");
         System.out.println("=====================================================");
 
+    }
+
+    public Iterator<Usuario> iterator() {
+        return fila.iterator();
     }
 
     //metodo buscar usuário
