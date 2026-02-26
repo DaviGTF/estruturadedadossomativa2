@@ -1,7 +1,6 @@
 import java.util.ListIterator;
 import java.util.Stack;
 import java.util.Iterator;
-import java.util.Scanner;
 
 public class HistoricoNavegacao {
     private Stack<Livro> historicoNavegacaoUsuario = new Stack<>();
