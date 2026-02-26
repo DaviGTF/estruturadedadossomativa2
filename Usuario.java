@@ -1,10 +1,10 @@
 import java.util.Scanner;
+import java.util.Iterator;
 
 public class Usuario {
     private String nome;
     private int id;
     private HistoricoNavegacao historico;
-
 
     public Usuario(String nome, int id) {
         this.nome = nome;
@@ -28,13 +28,12 @@ public class Usuario {
     public void mostrarUsuarios() {
         System.out.println("=== DETALHES DO USUÁRIO ===");
         System.out.println("Nome do usuário: " + nome + ".");
-        System.out.println("Id do usuário " + id + ".");
+        System.out.println("ID do usuário: " + id + ".");
         System.out.println("====================");
     }
 
-
     //exibir menu usuarios
-    public class ExibirMenuUsuarios {
+    public static class ExibirMenuUsuarios {
         public static void exibir(FilaDeEsperaUsuario fila, Scanner scanner) {
             int opcao;
             do {
@@ -59,12 +58,26 @@ public class Usuario {
                         scanner.nextLine();
                         fila.adicionarUsuarioFila(new Usuario(nome, id));
                         break;
-                    case 3:
-                        System.out.println("Digite o ID do usuário a ser removido:");
-                        int idRemover = scanner.nextInt();
-                        scanner.nextLine();
-                        fila.removerUsuarioFila();
-                        break;
+                        case 3:
+                            System.out.println("Digite o ID do usuário a ser removido:");
+                            int idRemover = scanner.nextInt();
+                            scanner.nextLine();
+                            
+                            Iterator<Usuario> iterator = fila.iterator();
+                            boolean encontrado = false;
+                            while (iterator.hasNext()) {
+                                Usuario u = iterator.next();
+                                if (u.getId() == idRemover) {
+                                    iterator.remove();
+                                    System.out.println("Usuário ID " + idRemover + " (" + u.getNome() + ") removido!");
+                                    encontrado = true;
+                                    break;
+                                }
+                            }
+                            if (!encontrado) {
+                                System.out.println("Usuário ID " + idRemover + " não encontrado!");
+                            }
+                            break;
                     case 4:
                         System.out.println("Voltando ao menu principal...");
                         break;

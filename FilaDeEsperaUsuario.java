@@ -1,7 +1,7 @@
 import java.util.Queue;
 import java.util.LinkedList;
-import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Iterator;
 
 public class FilaDeEsperaUsuario {
     private Queue<Usuario> fila = new LinkedList<>();
@@ -11,6 +11,10 @@ public class FilaDeEsperaUsuario {
         System.out.println("O usuário " + usuario.getNome() + " foi adicionado à lista de espera com sucesso!");
         System.out.println("=====================================================");
 
+    }
+
+    public Iterator<Usuario> iterator() {
+        return fila.iterator();
     }
 
     //metodo buscar usuário
@@ -84,9 +88,9 @@ public class FilaDeEsperaUsuario {
     }
 
     //menu fila de espera
-    public class ExibirMenuFilaDeEspera {
-        public static void exibir(Livro livroSelecionado, FilaDeEsperaUsuario filaPrincipal, Scanner scanner) { // Alterado parâmetro
-            FilaDeEsperaUsuario filaDoLivro = livroSelecionado.getFilaEspera(); // Pega a fila do livro
+    public static class ExibirMenuFilaDeEspera {
+        public static void exibir(Livro livroSelecionado, FilaDeEsperaUsuario filaPrincipal, Scanner scanner) {
+            FilaDeEsperaUsuario filaDoLivro = livroSelecionado.getFilaEspera();
             int opcao;
             do {
                 System.out.println("\n=== FILA DE ESPERA DO LIVRO: " + livroSelecionado.getTitulo() + " ===");
