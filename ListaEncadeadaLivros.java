@@ -170,9 +170,7 @@ public class ListaEncadeadaLivros {
                         biblioteca.buscarLivro(scanner);
                         break;
                     case 4:
-                        System.out.println("Digite o título do livro a ser removido:");
-                        String titulo = scanner.nextLine();
-                        biblioteca.removerLivro(scanner);
+                        biblioteca.removerLivro(scanner);  // Já pede o título internamente
                         break;
                     case 5:
                         System.out.println("Voltando ao menu principal...");
